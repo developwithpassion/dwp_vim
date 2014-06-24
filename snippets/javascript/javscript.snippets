@@ -1,0 +1,157 @@
+# Prototype
+snippet prot
+	${1:class_name}.prototype.${2:method_name} = function(${3:first_argument}) { 
+		${0:// body...}
+	};
+
+snippet cerr
+	console.error(${1:errors});
+	${0}
+
+snippet cl
+	console.log(${1:message});
+	${0}
+
+# Node env
+snippet #!
+	#!/usr/bin/env node
+	${0}
+
+# Immediate function
+snippet (f
+	(function(){
+		${0}
+	})();
+
+snippet fun;
+	function ${1:function_name}(${2:argument}) {
+		${0:// body...}
+	};
+
+snippet fun
+	function ${1:function_name}(${2:argument}) {
+		${0:// body...}
+	}
+
+# Anonymous Function
+snippet f
+	function (${1}) {
+		${0}
+	}
+
+snippet f;
+	function (${1}) {
+		${0}
+	};
+
+# if
+snippet if
+	if (${1:true}) {
+		${0}
+	}
+# if ... else
+snippet ife
+	if (${1:true}) {
+		${2}
+	} else {
+		${0}
+	}
+
+snippet each
+	${1:target}.each(function(value){
+		${0}
+	});
+
+snippet eachi
+	${1:target}.each(function(value, index){
+		${0}
+	});
+
+snippet subclass
+	var ${1:class_name} = ${2:base_class}.extend({
+		${0}
+	});
+
+# tertiary conditional
+snippet ter
+	${1:/* condition */} ? ${2:a} : ${0:b}
+
+snippet var
+	var ${1:varname} = ${2:value};${0}
+
+# for (...) {...}
+snippet for
+	for (var ${2:i} = 0, l = ${1:arr}.length; $2 < l; $2 ++) {
+		var ${3:v} = $1[$2];${0:}
+	}
+# for (...) {...} (Improved Native For-Loop)
+snippet forr
+	for (var ${2:i} = ${1:arr}.length - 1; $2 >= 0; $2 --) {
+		var ${3:v} = $1[$2];${0:}
+	}
+# while (...) {...}
+snippet wh
+	while (${1:/* condition */}) {
+		${0}
+	}
+# try
+snippet try
+	try {
+		${1}
+	} catch (${2:e}) {
+		${0:/* handle error */}
+	}
+# do...while
+snippet do
+	do {
+		${0}
+	} while (${1:/* condition */});
+# Object Method
+snippet :f
+	${1:method_name}: function (${2:attribute}) {
+		${0}
+	}${3:,}
+# setTimeout function
+snippet timeout
+	setTimeout(function () {${0}}${2}, ${1:10});
+
+# Define single property
+snippet prop
+	Object.defineProperty(
+		${1:object},
+		"${2:property}",
+		{
+			get : function $1_$2_getter() {
+				// getter code
+			},
+			set : function $1_$2_setter(value) {
+				// setter code
+			},
+			value        : ${3:value},
+			writeable    : ${4:boolean},
+			enumerable   : ${5:boolean},
+			configurable : ${0:boolean}
+		}
+	);
+
+# Define read property
+snippet rprop
+	Object.defineProperty(
+		${1:object},
+		"${2:property}",
+		{
+			get : function $1_$2_getter() {
+				// getter code
+			},
+			writeable    : false,
+			enumerable   : ${5:boolean},
+			configurable : false
+		}
+	);
+
+# Define non value function on hash
+snippet attrib
+	${1:name}: function(${2:arguments}){
+		${0}
+	},
+

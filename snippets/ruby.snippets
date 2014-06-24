@@ -1,0 +1,17 @@
+# #!/usr/bin/env ruby
+snippet tok
+	#{${1}}
+
+snippet context
+	context '${1}' do
+		it '${2}' do
+			${3}
+		end
+	end
+
+#rspec setup
+snippet bddc
+	before (:each) do
+		${1}
+	end
+
