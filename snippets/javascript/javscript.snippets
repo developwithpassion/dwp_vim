@@ -19,9 +19,9 @@ snippet #!
 
 # Immediate function
 snippet (f
-	(function(){
+	(function(${1:locals}){
 		${0}
-	})();
+	})(${2:imports});
 
 snippet fun
 	function ${1:function_name}(${2:argument}) {
@@ -107,6 +107,7 @@ snippet do
 		${0}
 	} while (${1:/* condition */});
 # Object Method
+
 snippet :f
 	${1:method_name}: function (${2:attribute}) {
 		${0}
@@ -155,3 +156,8 @@ snippet attrib
 		${0}
 	},
 
+snippet hack
+	/**
+	*[HACK - ${1:description} (JP - `system("date +%Y-%m-%d")`)]* 
+	*
+	*/

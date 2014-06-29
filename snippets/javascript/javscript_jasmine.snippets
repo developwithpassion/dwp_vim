@@ -12,6 +12,9 @@ snippet it
 snippet ee
 	expect(${1:actual}).toEqual(${2:value});${0}
 
+snippet eee
+	expect(${1:actual}).toBeExactlyEqualTo(${2:value});${0}
+
 snippet ene
 	expect(${1:actual}).not.toEqual(${2:value});${0}
 
@@ -75,3 +78,4 @@ snippet ae
 	afterEach(function(){
 		${0:body}
 	});
+
