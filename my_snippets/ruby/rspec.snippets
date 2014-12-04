@@ -1,0 +1,77 @@
+# #!/usr/bin/env ruby
+
+snippet context
+context '${1}' do
+	it '${2}' do
+		${3}
+	end
+end
+endsnippet
+
+snippet descg "describe (general)"
+describe '${1}' do
+	context${0}
+end
+endsnippet
+
+snippet descc "describe class"
+describe ${1} do
+	context${0}
+end
+endsnippet
+
+snippet bddc "rspec before"
+before (:each) do
+	${1}
+end
+endsnippet
+
+snippet it
+it '${1}' do
+	${0}
+end
+endsnippet
+
+snippet leti "inline let"
+let(:$1) { ${2} }${0}
+endsnippet
+
+snippet letm "multiline let"
+let(:$1) do
+	${2}
+end${0}
+endsnippet
+
+snippet subji "inline subject"
+subject { ${1:result} }${0}
+endsnippet
+
+snippet subjm "multiline subject"
+subject do
+	${1:result}
+end${0}
+endsnippet
+
+snippet ee
+expect(${1}).to eql(${2})
+endsnippet
+
+snippet ene
+expect(${1}).to_not eql(${2})
+endsnippet
+
+snippet et
+expect(${1}).to be_true
+endsnippet
+
+snippet ef
+expect(${1}).to be_false
+endsnippet
+
+snippet stub "stub [specific args - return value]"
+${1}.stub(:${2:method}).with(${3:args}).and_return(${4:return_value})${0}
+endsnippet
+
+snippet stub "stub [ignore args - return value]"
+${1}.stub(:${2:method}).and_return(${3:return_value})${0}
+endsnippet
