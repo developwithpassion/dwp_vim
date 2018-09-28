@@ -1,1 +1,1 @@
-set omnifunc=mailcomplete#Complete
+set omnifunc=dwp#mailcomplete#complete

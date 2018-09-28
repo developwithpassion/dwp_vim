@@ -1,4 +1,4 @@
-function! mailcomplete#Complete(findstart, base)
+function! dwp#mailcomplete#complete(findstart, base)
     if a:findstart == 1
         let line = getline('.')
         let idx = col('.')

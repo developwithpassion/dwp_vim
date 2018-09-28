@@ -1,7 +1,3 @@
-function! ToggleRelativeLineNumbering()
-  if(&relativenumber == 1)
-    set norelativenumber
-  else
-    set relativenumber
-  endif
+function! dwp#toggle_relative_line_numbering()
+  set relativenumber! relativenumber?
 endfunc
