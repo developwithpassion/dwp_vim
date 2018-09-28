@@ -8,11 +8,11 @@ function! dwp_vim#run_current_file_with_external_command()
   execute substitute(g:external_tool, "{current_file}", l:current_file, "g")
 endfunction
 
-function! dwp#toggle_relative_line_numbering()
+function! dwp_vim#toggle_relative_line_numbering()
   set relativenumber! relativenumber?
 endfunc
 
-function! dwp#mail_complete(findstart, base)
+function! dwp_vim#mail_complete(findstart, base)
     if a:findstart == 1
         let line = getline('.')
         let idx = col('.')

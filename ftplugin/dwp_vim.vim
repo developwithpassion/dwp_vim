@@ -1,1 +1,1 @@
-set omnifunc=dwp#mail#complete
+set omnifunc=dwp_vim#mail_complete
