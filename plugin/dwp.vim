@@ -1,3 +1,7 @@
+if !exists("g:external_tool")
+  let g:external_tool = "echo {current_file}"
+endif
+
 function! dwp#mailcomplete#complete(findstart, base)
     if a:findstart == 1
         let line = getline('.')
@@ -23,4 +27,14 @@ function! dwp#mailcomplete#complete(findstart, base)
         endif
         return split(system(goobook . ' query ' . a:base . '|' . trim . '|' . fmt ), '\n')
     endif
+endfunc
+
+function! dwp#run_current_file_with_external_command()
+  let l:current_file = @%
+  let l:command = "!clear && echo " . g:external_tool . " && " . g:external_tool
+  execute substitute(g:external_tool, "{current_file}", l:current_file, "g")
+endfunction
+
+function! dwp#toggle_relative_line_numbering()
+  set relativenumber! relativenumber?
 endfunc
